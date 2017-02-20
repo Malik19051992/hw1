@@ -1,0 +1,534 @@
+*{
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+}
+
+#head-jpg{
+	height:120px;
+	margin-left:-35px;
+	margin-bottom: 20px;
+}
+
+#menu,#month,#others{
+	font-size:20px;	
+	cursor: pointer;
+	margin-left: 50px;
+}
+
+#month{
+	margin-left:30px;
+}
+
+#others{
+	right:50px;
+	position: absolute;
+}
+
+#nav-menu{
+	margin-top: 0;
+	display: flex;
+	padding-top: 40px;
+	height: 80px;
+	background-image:url("head.jpg");
+}
+
+.main{
+	padding-bottom:30px;
+	background-color: white;
+	position:relative;
+	margin: 0 auto;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	
+}
+
+.calendar-body{
+	display:flex;
+}
+
+.calendar-body__timer{
+	display:inline-block;
+	width:50px;
+	flex-shrink:0;
+}
+
+.timer__timer-row{
+	height:35px;
+	font-size:15px;
+	margin:0 5px 0 0;
+}
+
+#start-time{
+	padding-top:168px;
+}
+
+.calendar-body__day{
+	margin:10px 5px 0 0;
+	width:14%;
+	display:inline-block;
+	vertical-align: top;
+	height:700px;
+	border-radius:5px 5px;
+}
+
+
+.day__general-settings{
+	border-radius:5px 5px;	
+	font-size: 15px;
+	line-height: 20px;
+	padding: 5px 5px;
+	margin:0 5px 5px 5px;
+	color: white;
+	cursor: pointer;
+	position: relative;
+
+
+}
+
+.day__general-settings:hover{
+	box-shadow: 0 0 10px rgba(0, 0, 0,0.7);
+}
+
+
+
+.day__date{
+	padding: 0 0 0 5px;
+
+}
+
+.day_today{
+	color:dodgerblue;
+}
+
+.day_now{
+	display: none;
+}
+
+
+
+.date__day-name{
+	font-size:15px;
+	line-height:20px;
+	margin:5px 5px 5px 5px;
+}
+
+.date__date-number{
+	font-size:40px;
+	line-height:45px;
+	margin:5px 0 0 0;
+}
+
+.day__data-of-day{
+
+}
+
+.data-of-day-jpg{
+	display:none;
+}
+
+.data-of-day__head-day{
+	height:100px;
+}
+
+.head-day__more-information{
+	font-size: 15px;
+	padding: 5px 5px;
+	margin:5px 5px;
+	color:black;
+}
+.head-day__more-information:hover{
+	color:blue;
+	cursor: pointer;
+}
+
+.head-day_in-town
+{
+	background-color: DodgerBlue;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	height:17px;
+
+}
+
+.head-day_birthday{
+	background-color: LimeGreen;
+	white-space: nowrap;
+	text-overflow: ellipsis; 
+	overflow: hidden;
+	height:17px;
+
+}
+
+.head-day__after-more{
+	display:none;
+}
+
+.data-of-day__deals{
+
+}
+
+
+.deals__buttons{
+	height: 15px;
+	width: 15px;
+	flex-shrink:0;
+	background-color: aliceblue;
+	margin: 0;
+	padding: 1px;
+	border-radius: 8px 8px;
+	display: flex;
+	flex-direction: column;
+	cursor: default;
+	position: absolute;
+	right: 5px;
+	overflow: hidden;
+	z-index: 1;
+
+}
+
+.deals__data{
+	overflow: hidden;
+	padding-right: 20px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.data__time{
+	display: none;
+}
+
+.data__text{
+	font-size:10px;
+}
+
+/*.deals_to-do-time:hover,.deals_to-do-not-time:hover,.deals_done:hover{
+	animation-name: show-all;
+	animation-duration: 0.5s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes show-all {
+	to{height: auto;}
+}*/
+
+
+.data__name{
+	font-weight:bolder;
+}
+
+
+.deals__buttons:hover{
+	animation-name: drow-button;
+	animation-duration: 0.5s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes drow-button {
+	from {height: 15px;}
+	to {height: 45px; }
+}
+
+.deals_buttons-mod{
+	height: 13px;
+	width: 13px;
+	padding:0 0 1px 0;
+	margin: 1px 0 1px 1px;
+	background-color: lightgrey;
+	border-radius: 50%;
+	font-size: 7px;
+	flex-shrink:0;
+	border-width: 0;
+	outline: none;
+	cursor: pointer;
+	outline: none;
+
+
+}
+
+.deals_buttons-mod:hover {
+	box-shadow: 0 0 3px rgba(0, 0, 0,0.7);
+}
+
+.deals_buttons-mod:active{
+	background-color: darkgray;
+}
+
+.deals_to-do-time,.deals_to-do-not-time,.deals_done{
+	display: flex;
+	justify-content:space-between;
+
+}
+
+@keyframes show-all {
+	to{height: auto;}
+}
+
+.deals_done{
+	background-color:forestgreen ;
+}
+
+.deals_to-do-time{
+	background-color: dodgerBlue ;
+}
+
+.deals_to-do-not-time{
+	background-color: red ;	
+}
+
+.deals_empty-time{
+	padding: 5px 5px;
+	margin:5px 5px;
+	display: flex;
+	justify-content:flex-end;
+}
+
+
+.deals_duration-task-hour-0-5{
+	height: 18px;
+	min-height:18px ;
+}
+
+.deals_duration-task-hour-1{
+	height: 35px;
+	min-height:35px ;
+}
+
+.deals_duration-task-hour-1-5{
+	height: 60px;
+	min-height:60px ;
+}
+
+.deals_duration-task-hour-2{
+	height: 85px;
+	min-height:85px ;
+}
+
+.deals_duration-task-hour-2-5{
+	height: 110px;
+	min-height:110px ;
+}
+
+.deals_duration-task-hour-3{
+	height: 135px;
+	min-height:135px ;
+}
+
+
+
+
+@media (max-width: 800px) {
+	*{
+
+	}
+
+	header{
+		margin-left: 15px;
+	}
+
+	.main{
+		padding:5px;
+		background-color: white;
+		margin: 0;
+		min-width:250px;
+
+	}	
+		
+	#nav-menu{
+		position:relative;
+		background-image:none;
+		margin-top:-20px;
+		margin-bottom:10px;
+		margin-left:-17px;
+		padding-top: 10px;
+		border: 1px solid rgb(100,100,100);
+		box-shadow: 20px 0 20px -20px #000 inset, -20px 0 20px -20px #000 inset;
+		height:40px;
+	}
+
+	#menu,#month,#others{
+		padding-top:5px;
+		display:inline-block;
+		font-size:20px;	
+		cursor: pointer;
+		position:static;
+		margin:0;
+	}
+
+	#menu
+	{
+		margin-left:30px;
+	}
+	#month{
+		margin-left:10px;
+	}
+
+	#others{
+		position:absolute;
+		right:30px;
+	}
+	#head-jpg{
+		display:none;
+	}
+	
+	.calendar-body{
+		display:flex;
+		flex-direction:column;
+	}
+	
+	.calendar-body__timer{
+		display:none;
+		border-bottom: solid 1px;
+	}
+	
+	.calendar-body__day {
+		margin-top:20px;
+		padding: 0;
+		width:auto;
+		border-radius:5px 5px;
+		height:auto;
+		display:flex;
+	}
+
+	.day_now{
+		display: block;
+		height: 10px;
+	}
+
+	.now_circle{
+		height: 10px;
+		width: 10px;
+		background-color: dodgerblue;
+		border-radius: 50%;
+		margin-left: -10px;
+	}
+
+
+	.now_line{
+		top:5px;
+		height: 1px;
+		border-top: solid 2px dodgerblue;
+		margin-top: -6px;
+		margin-right: 5px ;
+		margin-left: -10px;
+
+	}
+	
+	
+	.day__date{
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content:flex-end;
+	}
+	.day__data-of-day{
+		
+		width:100%;
+	}
+
+	.data-of-day-jpg{
+		display: block;
+		height: 40px;
+		border-radius: 50%;
+	}
+
+	.data-of-day__head-day{
+		border: none;
+		height: auto;
+		margin-bottom: 10px ;
+	}
+
+	.data__time,.data__text{
+		display: block;
+	}
+
+
+
+
+	.head-day_in-town,.head-day_birthday{
+		display: flex;
+		justify-content:space-between;
+
+	}
+
+	.deals_to-do-time:hover,.deals_to-do-not-time:hover,.deals_done:hover{
+		animation-name: none;
+
+	}
+	
+	.deals_empty-time{
+		display: none;
+	}
+	
+	.head-day__after-more{
+		display:block;
+	}
+	
+	.head-day__more-information{
+		display:none;
+	}
+	
+	
+	.day__general-settings{
+		height:auto;
+		word-wrap:break-word
+	}
+	
+	.deals_duration-task-hour-0-5{
+		height: auto;
+		min-height: 0;
+	}
+
+	.deals_duration-task-hour-1{
+		height: auto;
+		min-height: 0;
+	}
+	.deals_duration-task-hour-1-5{
+		height: auto;
+		min-height: 0;
+	}
+	.deals_duration-task-hour-2{
+		height: auto;
+		min-height: 0;
+	}
+	.deals_duration-task-hour-2-5{
+		height: auto;
+		min-height: 0;
+	}
+	.deals_duration-task-hour-3{
+		height: auto;
+		min-height: 0;
+	}
+
+	.img_city{
+		background-image:url('city.jpg');
+		height: 100px
+	}
+
+	.img_shop{
+		background-image:url('shop.jpg');
+		height: 100px
+	}
+
+	.img_tennis{
+		background-image:url('tennis.jpg');
+		height: 100px
+	}
+
+	.img_cook{
+		background-image:url('cook.jpg');
+		height: 100px
+	}
+
+	.img_meeting{
+		background-image:url('meeting.jpg');
+		height: 100px
+	}
+
+
+
+}
+	
+	
+	
