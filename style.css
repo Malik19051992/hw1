@@ -31,32 +31,87 @@
 	background-image:url("head.jpg");
 }
 
+
+
+.timer-table {
+	border-collapse: collapse;
+	position: absolute;
+	width: 100%;
+
+}
+
+.timer-table_date-row {
+	height:80px;
+}
+
+.timer-table_action-row {
+	height:105px;
+}
+
+.timer-table_timer-row {
+	height:50px;
+}
+
+.timer-table td {
+	border: 1px solid rgba(60, 60, 60, 0.03);
+	width: 14%;
+
+}
+
+.timer-table .timer-table_fist-column{
+	width: 38px;
+	min-width: 38px;
+}
+
 .main{
-	padding-bottom:30px;
+	padding:0 0 30px 0;
 	background-color: white;
 	position:relative;
 	margin: 0 auto;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
 	user-select: none;
 	
 }
 
+.addButton{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	border: none;
+	font-size: 20px;
+	height: 50px;
+	width: 50px;
+	background-color: crimson;
+	font-weight: bold;
+	border-radius: 50%;
+	z-index: 100;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0,0.7);
+	cursor: pointer;
+	outline: none;
+}
+
+.addButton:active{
+	box-shadow: 0 0 0 0 rgba(0, 0, 0,0.7);
+}
+
+
 .calendar-body{
 	display:flex;
+	flex-wrap:nowrap;
+	align-content:stretch;
 }
 
 .calendar-body__timer{
-	display:inline-block;
-	width:50px;
+	flex-basis:40px;
 	flex-shrink:0;
+	padding-left:2px;
+	padding-right:0 ;
 }
 
 .timer__timer-row{
-	height:35px;
-	font-size:15px;
+	height:50px;
+	font-size:12px;
 	margin:0 5px 0 0;
+	padding-right:0 ;
 }
 
 #start-time{
@@ -64,10 +119,8 @@
 }
 
 .calendar-body__day{
-	margin:10px 5px 0 0;
+	margin:10px 0 0 0;
 	width:14%;
-	display:inline-block;
-	vertical-align: top;
 	height:700px;
 	border-radius:5px 5px;
 }
@@ -76,14 +129,12 @@
 .day__general-settings{
 	border-radius:5px 5px;	
 	font-size: 15px;
-	line-height: 20px;
+	line-height: 15px;
 	padding: 5px 5px;
-	margin:0 5px 5px 5px;
+	margin:5px 2px 10px 2px;
 	color: white;
 	cursor: pointer;
 	position: relative;
-
-
 }
 
 .day__general-settings:hover{
@@ -128,13 +179,14 @@
 }
 
 .data-of-day__head-day{
-	height:100px;
+	height:95px;
 }
 
 .head-day__more-information{
 	font-size: 15px;
 	padding: 5px 5px;
-	margin:5px 5px;
+	margin:5px;
+	height: 15px;
 	color:black;
 }
 .head-day__more-information:hover{
@@ -145,21 +197,56 @@
 .head-day_in-town
 {
 	background-color: DodgerBlue;
-	white-space: nowrap;
+	line-height: 17px;
 	overflow: hidden;
-	text-overflow: ellipsis; 
-	height:17px;
+	height:15px;
 
 }
 
 .head-day_birthday{
 	background-color: LimeGreen;
-	white-space: nowrap;
-	text-overflow: ellipsis; 
 	overflow: hidden;
-	height:17px;
+	line-height: 17px;
+	height:15px;
+}
+
+
+.head-day_in-town:hover .head-day__flipper,.head-day_birthday:hover .head-day__flipper {
+	transform: rotateY(180deg);
+}
+
+.head-day__flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+	width: 100%;
+}
+
+.flipper__front, .flipper__back {
+	backface-visibility: hidden;
+	position: absolute;
+}
+
+.flipper__front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.flipper__back {
+	transform: rotateY(180deg);
+	margin-top: -1px ;
+	font-size: 10px;
+	line-height: 10px;
 
 }
+
+
+
+
+
+
+
+
 
 .head-day__after-more{
 	display:none;
@@ -202,17 +289,11 @@
 
 .data__text{
 	font-size:10px;
+
 }
 
-/*.deals_to-do-time:hover,.deals_to-do-not-time:hover,.deals_done:hover{
-	animation-name: show-all;
-	animation-duration: 0.5s;
-	animation-fill-mode:forwards;
-}
 
-@keyframes show-all {
-	to{height: auto;}
-}*/
+
 
 
 .data__name{
@@ -280,40 +361,34 @@
 
 .deals_empty-time{
 	padding: 5px 5px;
-	margin:5px 5px;
+	margin:5px 2px 10px 2px;
 	display: flex;
 	justify-content:flex-end;
 }
 
-
-.deals_duration-task-hour-0-5{
-	height: 18px;
-	min-height:18px ;
-}
-
 .deals_duration-task-hour-1{
-	height: 35px;
-	min-height:35px ;
+	height: 30px;
+	min-height:30px ;
 }
 
 .deals_duration-task-hour-1-5{
-	height: 60px;
-	min-height:60px ;
+	height: 55px;
+	min-height:55px ;
 }
 
 .deals_duration-task-hour-2{
-	height: 85px;
-	min-height:85px ;
+	height: 80px;
+	min-height:80px ;
 }
 
 .deals_duration-task-hour-2-5{
-	height: 110px;
-	min-height:110px ;
+	height: 105px;
+	min-height:105px ;
 }
 
 .deals_duration-task-hour-3{
-	height: 135px;
-	min-height:135px ;
+	height: 130px;
+	min-height:130px ;
 }
 
 
@@ -326,6 +401,9 @@
 
 	header{
 		margin-left: 15px;
+	}
+	.timer-table{
+		display: none;
 	}
 
 	.main{
@@ -381,6 +459,7 @@
 	.calendar-body__timer{
 		display:none;
 		border-bottom: solid 1px;
+
 	}
 	
 	.calendar-body__day {
@@ -391,6 +470,8 @@
 		height:auto;
 		display:flex;
 	}
+
+
 
 	.day_now{
 		display: block;
@@ -443,6 +524,18 @@
 		display: block;
 	}
 
+	.head-day_in-town:hover .head-day__flipper,.head-day_birthday:hover .head-day__flipper{
+		transform: none;
+	}
+
+	.flipper__front, .flipper__back {
+		position: relative;
+		transform: none;
+	}
+
+	.flipper__front{
+		margin-bottom: 5px;
+	}
 
 
 
@@ -468,7 +561,10 @@
 	.head-day__more-information{
 		display:none;
 	}
-	
+
+	.flipper__front{
+		height: auto;
+	}
 	
 	.day__general-settings{
 		height:auto;
